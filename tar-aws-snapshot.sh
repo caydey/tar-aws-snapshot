@@ -318,7 +318,7 @@ reviewSnapshot "$SNAPSHOT_OUTPUT"
 
 # update index.snar, not stored as deep_archive as its downloaded on every upload
 COMPRESSED_INDEX_SNAR="$TMP_FOLDER/index.snar.zst"
-zstd -9 -T0 --quiet "$INDEX_SNAR" "$COMPRESSED_INDEX_SNAR"
+zstd -9 -T0 --quiet "$INDEX_SNAR" -o "$COMPRESSED_INDEX_SNAR"
 rm "$INDEX_SNAR"
 # encrypt index.snar
 ENCRYPTED_INDEX_SNAR="$TMP_FOLDER/index.snar.zst.gpg"
